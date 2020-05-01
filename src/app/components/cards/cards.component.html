@@ -1,0 +1,45 @@
+<div class="select">
+  <select [(ngModel)]="selectedGender" (change)="filter($event)">
+    <option
+      class="select-option"
+      *ngFor="let gender of genders"
+      [(value)]="gender.value"
+      >{{ gender.value }}</option
+    >
+  </select>
+  <!-- <p>{{ selectedGender }}</p> -->
+</div>
+
+<div class="grid">
+  <div *ngFor="let person of persons" class="card">
+    <img [src]="person.img" alt="Avatar" style="width: 100%;" />
+    <div
+      [ngStyle]="{
+        'background-color': getBG(person.gender)
+      }"
+      class="container"
+    >
+      <h4>
+        <b>{{ person.name }}</b
+        ><span *ngIf="allPersonsHaveGender" class="emoji">
+          {{ person.gender }}</span
+        >
+        <p *ngIf="person.age">({{ person.age }} years old)</p>
+      </h4>
+      <p>{{ person.profession }}</p>
+    </div>
+  </div>
+</div>
+<!-- <div class="grid">
+  <div class="card">
+    <img
+      src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80"
+      alt="Avatar"
+      style="width: 100%;"
+    />
+    <div class="container">
+      <h4><b>John Doe</b></h4>
+      <p>Architect & Engineer</p>
+    </div>
+  </div>
+</div> -->
