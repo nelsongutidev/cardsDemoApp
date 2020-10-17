@@ -1,4 +1,4 @@
-# SampleApp
+# Simple App made for Basic Angular Intro Talk
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
